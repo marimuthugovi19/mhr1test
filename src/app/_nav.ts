@@ -1,34 +1,38 @@
-import { INavData } from '../../dist/@coreui/angular';
+import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
     name: 'Dashboard',
-    url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    url: '/home/dashboard',
+    icon: 'icon-speedometer'
   },
   {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    attributes: { disabled: true },
+    name: 'Organization',
+    url: '/home/organization',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Company Profile',
+        url: '/home/organization/companyprofile',
+        icon: 'icon-puzzle'
+      }
+    ]
   },
   {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
+    name: 'Onkearding',
+    url: '/home/onkearding',
+    icon: 'icon-cursor',
+    children: [
+      {
+        name: 'Personal Info',
+        url: '/home/onkearding/personalinfo',
+        icon: 'icon-cursor'
+      }
+    ]
   },
+  
   {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
-  }
+    divider: true
+  },
+  
 ];
